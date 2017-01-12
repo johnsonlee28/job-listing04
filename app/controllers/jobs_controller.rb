@@ -1,12 +1,6 @@
 class JobsController < ApplicationController
   before_filter :authenticate_user!, only:[:new,:edit,:create,:update,:destroy]
 
-  def require_is_admin
-    if !current_user.admin?
-      flash[:alert] = "You are not admin"
-      redirect_to root_path
-    end
-  end
 
   def index
     @jobs = Job.all
@@ -35,7 +29,7 @@ class JobsController < ApplicationController
 
   def update
     @job = Job.find(params[:id])
-    if @job.update(job.params)
+    if @job.update(job_params)
       redirect_to jobs_path
     else
       render :edit
@@ -51,7 +45,7 @@ class JobsController < ApplicationController
 
 private
   def job_params
-    params.require(:job).permit(:title,:description)
+    params.require(:job).permit(:title,:description,:wage_lower_bound,:wage_upper_bound,:contact_email)
   end
 
 end
