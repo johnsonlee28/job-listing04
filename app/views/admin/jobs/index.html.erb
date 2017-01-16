@@ -2,10 +2,15 @@
   <%= link_to("Add a Job", new_admin_job_path, :class => "btn btn-default") %>
 </div>
 <br><br>
-<table class="table table-boldered">
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">职位空缺</div>
+
+  <!-- Table -->
+ <table class="table table-boldered">
   <thead>
     <tr>
-      <td>职缺</td>
+      <td>招聘</td>
       <td>收到简历数量</td>
       <td>薪资下限</td>
       <td>薪资上限</td>
@@ -38,3 +43,4 @@
     </tr>
   <% end %>
 </table>
+</div>
