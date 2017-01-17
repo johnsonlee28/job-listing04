@@ -20,7 +20,7 @@
 @import "font-awesome";
 
 body {
-    padding-top: 75px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+    padding-top: 60px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
 }
 
 .navbar-fixed-top .nav {
@@ -80,7 +80,7 @@ body {
 
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
-  color: #00BFFF;//鼠标放置在链接上的文字颜色
+  color: #29B6F6;//鼠标放置在链接上的文字颜色
   background-color: transparent;//鼠标放置在链接上的背景颜色，这里设为透明
 }
 
@@ -142,7 +142,6 @@ navbar-default .navbar-nav > li > a{
 html {
   overflow-y: scroll;
 }
-
 
 
 section {
