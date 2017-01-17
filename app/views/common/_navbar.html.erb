@@ -2,11 +2,14 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <a class="navbar-brand" href="/"><img src='<%= image_url 'logo.png' %>'>Job Listing04</a>
+      <a class="navbar-brand" href="/"><img src='<%= image_url 'logo.png' %>'>Victory</a>
     </div>
+    <!-- Main Button -->
+
     <!-- Collect the nav links,forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
+
+      <ul class="nav navbar-nav navbar-right" style="padding-top:0px;">
         <% if !current_user %>
             <li><%= link_to("注册", new_user_registration_path) %></li>
             <li><%= link_to("登入", new_user_session_path)%></li>

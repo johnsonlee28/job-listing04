@@ -10,37 +10,42 @@
  <table class="table table-boldered table-striped custab">
   <thead>
     <tr>
+      <td>#</td>
       <td>招聘</td>
       <td>收到简历数量</td>
-      <td>薪资下限</td>
-      <td>薪资上限</td>
+      <td>薪资范围</td>
       <td>管理选项</td>
       <td>刊登时间</td>
     </tr>
   </thead>
 
-  <% @jobs.each do |job| %>
+  <% @jobs.each_with_index do |job,index| %>
     <tr>
+      <td><%= index +1 %></td>
       <td>
         <%= render_job_status(job) %>
         <%= link_to(job.title, admin_job_path(job)) %>
       </td>
       <td><%= link_to(job.resumes.count, admin_job_resumes_path(job))  %></td>
-      <td><%= job.wage_lower_bound %></td>
-      <td><%= job.wage_upper_bound %></td>
-      <td>
-        <%= link_to("Edit", edit_admin_job_path(job)) %> |
-        <%= link_to("Delete", admin_job_path(job), :method => :delete, :data => {:confirm => "Are you sure?"}) %> |
-        <% if job.is_hidden %>
-           <%= link_to("Publish", publish_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-default") %>
-        <% else %>
-           <%= link_to("Hide", hide_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-default") %>
-        <% end %>
+      <td><span class="badge badge-info">
+             <span class="fa fa-rmb"></span><%= job.wage_lower_bound %> - <%= job.wage_upper_bound %> 元
+          </span>
       </td>
       <td>
-        <%= job.created_at %>
-      </td>
+        <%= link_to(edit_admin_job_path(job),  class: "btn btn-xs btn-info") do %><i class="fa fa-pencil"></i><% end %> |
+
+        <%= link_to(admin_job_path(job), :method => :delete,class: "btn btn-xs btn-danger",:data => {:confirm => "Are you sure?"})  do %><i class="fa fa-trash-o"></i><% end %> |
+         <% if job.is_hidden %>
+           <%= link_to(publish_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-success") do %><i class="fa fa-eye"></i><% end %>
+         <% else %>
+           <%= link_to(hide_admin_job_path(job), :method => :post,  :class => "btn btn-xs btn-default") do %><i class="fa fa-eye-slash"></i><% end %>
+         <% end %>
+       </td>
+       <td>
+         <%= job.created_at %>
+       </td>
+
     </tr>
-  <% end %>
-</table>
+   <% end %>
+  </table>
 </div>

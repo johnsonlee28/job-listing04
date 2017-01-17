@@ -64,3 +64,99 @@ body {
   box-shadow: 3px 3px 0px transparent;
   transition: 0.5s;
 }
+
+//navbar设置
+.navbar-default {
+    background-color: #FFFFFF;//背景颜色
+    border-color: #EBEBEB;//边框色
+    margin-bottom: 0;//底部 margin 不撑开距离
+}
+
+.navbar-default .navbar-brand {
+   color: #8A8A8A;//字体颜色  <!-- #EF6C00 -->
+   padding: 10px 30px;//上下10px,左右15px
+   line-height: 30px;//文字行高
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #00BFFF;//鼠标放置在链接上的文字颜色
+  background-color: transparent;//鼠标放置在链接上的背景颜色，这里设为透明
+}
+
+//这是导航栏设置
+navbar-default .navbar-nav > li > a{
+  color: #FF6F00;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #D3D3D3;
+  background-color: transparent;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #FF6F00;
+  background-color: #FFE0B2;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:hover {
+    background-color: #FFFAFA; //导航按钮按下时背景颜色
+    color: #212121;
+}
+
+//首页设置
+.jumbotron {
+  background-image:url('http://y.photo.qq.com/img?s=n0m7YMg0L&l=y.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 110px;
+}
+
+.title {
+  font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+  text-align: center;
+  margin-top: 200px;
+  margin-bottom: 80px;
+}
+
+.slogan {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  text-align: center;
+  color: white;
+  top: 12px;
+}
+
+.lead {
+  margin-bottom: 60px;
+  text-align: center;
+  color: white;
+}
+
+/* universal */
+
+html {
+  overflow-y: scroll;
+}
+
+
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
