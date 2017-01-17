@@ -2,8 +2,8 @@
   <!-- <ul class="nav nav-pills nav-justified" style="max-width: 500px; padding-top:40px;">
     <li><%= link_to("招聘明细", admin_jobs_path) %></li><br> -->
     <ul div class="list-group" style="padding-top:40px;">
-      <a class="list-group-item" href="/admin/jobs"><i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp; Home</a>
-      <a class="list-group-item" href="/jobs/"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp; Library</a>
+      <%= link_to admin_jobs_path, class:"list-group-item" do %><i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp; Home<% end %>
+      <%= link_to jobs_path, class:"list-group-item" do %><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp; FrontPage<% end %>
       <a class="list-group-item" href="#"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i>&nbsp; Applications</a>
       <a class="list-group-item" href="#"><i class="fa fa-cog fa-fw" aria-hidden="true"></i>&nbsp; Settings</a>
   </ul>

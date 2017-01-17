@@ -1,0 +1,33 @@
+<h2> 简历列表 </h2>
+
+<hr>
+
+<% [@jobs,@resumes].each do |job,resume| %>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="row">
+      <div class="rol-md-10">
+        <h3 class="panel-title">
+          <%= job.title %>
+        </h3>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    <div class="trix-content">
+      <%= resume.user.email %>
+      <hr>
+      <p><%= simple_format(resume.content) %></p>
+    </div>
+    <hr>
+    <% if resume.attachment.present? %>
+      <i class="fa fa-paperclip"></i>
+      <%= link_to("Download Resume", resume.attachment_url) %>
+    <% else %>
+      No attachment
+    <% end %>
+  </div>
+</div>
+
+<% end %>
