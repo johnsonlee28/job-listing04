@@ -52,8 +52,9 @@
     <tr>
       <td>#</td>
       <td>职位招募</td>
+      <td>企业名称</td>
+      <td>城市</td>
       <td>薪资范围</td>
-      <td>更新时间</td>
       <td>发布时间</td>
     </tr>
   </thead>
@@ -62,15 +63,14 @@
      <tr>
        <td><%= index +1%></td>
        <td><%= link_to(job.title, job_path(job)) %></td>
-       <td width="30%">
+       <td><%= job.company_name %></td>
+       <td><%= job.place %></td>
+       <td width="15%">
          <span class="badge badge-info">
            <span class="fa fa-rmb"></span><%= job.wage_lower_bound %> - <%= job.wage_upper_bound %> 元
          </span>
        </td>
-       <td width="20%">
-         <%= job.updated_at %>
-       </td>
-       <td width="20%">
+       <td width="15%">
          <%= job.created_at %>
        </td>
      </tr>

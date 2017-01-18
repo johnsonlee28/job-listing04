@@ -13,7 +13,9 @@
     <tr>
       <td>#</td>
       <td>招聘</td>
-      <td>收到简历数量</td>
+      <td>公司名称</td>
+      <td>城市</td>
+      <td>收到简历</td>
       <td>薪资范围</td>
       <td>管理选项</td>
       <td>刊登时间</td>
@@ -27,6 +29,8 @@
         <%= render_job_status(job) %>
         <%= link_to(job.title, admin_job_path(job)) %>
       </td>
+      <td><%= job.company_name %></td>
+      <td><%= job.place %></td>
       <td><%= link_to(job.resumes.count, admin_job_resumes_path(job))  %></td>
       <td><span class="badge badge-info">
              <span class="fa fa-rmb"></span><%= job.wage_lower_bound %> - <%= job.wage_upper_bound %> 元
