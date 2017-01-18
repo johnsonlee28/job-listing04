@@ -11,4 +11,9 @@ module JobsHelper
     excerpt_cont = excerpt(job.title, query_string, radius: 500)
     highlight(excerpt_cont,query_string)
   end
+
+  def time_ago_in_words(from_time, options = {})
+   distance_of_time_in_words(from_time, Time.now, options)
+  end
+
 end

@@ -62,6 +62,7 @@ class JobsController < ApplicationController
     end
   end
 
+
   protected
 
   def validates_search_key
@@ -76,7 +77,7 @@ class JobsController < ApplicationController
 
 private
   def job_params
-    params.require(:job).permit(:title,:description,:wage_lower_bound,:wage_upper_bound,:contact_email,:is_hidden)
+    params.require(:job).permit(:title,:description,:wage_lower_bound,:wage_upper_bound,:contact_email,:is_hidden,:company_name,:place)
   end
 
 end

@@ -70,8 +70,8 @@
            <span class="fa fa-rmb"></span><%= job.wage_lower_bound %> - <%= job.wage_upper_bound %> 元
          </span>
        </td>
-       <td width="15%">
-         <%= job.created_at %>
+       <td width="10%">
+          <%= time_ago_in_words(job.created_at) %> 前
        </td>
      </tr>
   <% end %>
