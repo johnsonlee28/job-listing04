@@ -15,9 +15,7 @@
 
  </div>
 <!-- search bar -->
-<div class="contain-fluid" style="padding-top:10px">
-  <%= render :partial => "jobs/search_bar" %>
-</div>
+
 
 
 <!-- 职位有关内容 -->
@@ -42,13 +40,13 @@
 <br><br>
 <div class="panel panel-default" >
   <!-- Default panel contents -->
-  <div class="panel-heading">创梦空间</div>
+
   <!-- Table -->
 <table class="table table-boldered table-striped custab">
   <thead>
     <tr>
       <td>#</td>
-      <td>职称</td>
+      <td>职位招募</td>
       <td>薪资范围</td>
       <td>更新时间</td>
       <td>发布时间</td>
@@ -74,4 +72,8 @@
   <% end %>
 </tbody>
 </table>
+
+</div>
+<div class="text-center">
+  <%= will_paginate @jobs %>
 </div>
