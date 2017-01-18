@@ -19,4 +19,8 @@ class Job < ApplicationRecord
 
   has_many :resumes
 
+  def present?
+    is_present
+  end
+
 end
