@@ -3,8 +3,9 @@
 <head>
 
 </head>
-<body>
 
+<body>
+<div class="container" id="include-job">
  <div class="center hero-unit" style="background:#B3E5FC; padding-top:10px; padding-bottom:15px;">
 
     <h1>Welcome to the Victor Hunting</h1>
@@ -19,13 +20,10 @@
    <%= link_to "Sign up now!", '#', class: "btn btn-large btn-primary" %>
 
  </div>
-<!-- search bar -->
-
-
 
 <!-- 职位有关内容 -->
 <br>
-<div class="dropdown clearfix pull-right">
+<!-- <div class="dropdown clearfix pull-right">
    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
      排序
      <span class="caret"></span>
@@ -41,46 +39,58 @@
        <%= link_to("按照发表时间排序", jobs_path) %>
      </li>
    </ul>
-</div>
+</div> -->
 <br><br>
-<div class="panel panel-default" >
   <!-- Default panel contents -->
 
   <!-- Table -->
-<table class="table table-boldered table-striped custab">
-  <thead>
-    <tr>
-      <td>#</td>
-      <td>职位招募</td>
-      <td>企业名称</td>
-      <td>城市</td>
-      <td>薪资范围</td>
-      <td>发布时间</td>
-    </tr>
-  </thead>
+<ul class="nav nav-tabs" role="tablist" id="myTab">
+  <li role="presentation" class="active"><a href="<% link_to(jobs_path) %>" role="tab" data-toggle="tab">Home</a></li>
+  <li role="presentation"><%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %></li>
+  <li role="presentation"><%= link_to("按照发表下限排序", jobs_path(:order => "by_lower_bound")) %></li>
+</ul>
+<script>
+  $(function () {
+    $('#myTab a:last').tab('show')
+  })
+</script>
+
+  <table class="table table-boldered table-striped custab">
+    <thead>
+      <tr>
+        <td>#</td>
+        <td>职位招募</td>
+        <td>企业名称</td>
+        <td>城市</td>
+        <td>薪资范围</td>
+        <td>发布时间</td>
+      </tr>
+    </thead>
+
   <tbody>
-   <% @jobs.each_with_index do |job, index| %>
-     <tr>
-       <td><%= index +1%></td>
-       <td><%= link_to(job.title, job_path(job)) %></td>
-       <td><%= job.company_name %></td>
-       <td><%= job.place %></td>
-       <td width="15%">
-         <span class="badge badge-info">
-           <span class="fa fa-rmb"></span><%= job.wage_lower_bound %> - <%= job.wage_upper_bound %> 元
-         </span>
-       </td>
-       <td width="10%">
-          <%= time_ago_in_words(job.created_at) %> 前
-       </td>
-     </tr>
+  <% @jobs.each_with_index do |job, index| %>
+   <tr>
+    <td><%= index +1%></td>
+    <td><span><i class="fa fa-paw" aria-hidden="true"></i> <%= link_to(job.title, job_path(job)) %></td>
+    <td>  <span><i class="fa fa-handshake-o" aria-hidden="true"></i> <%= job.company_name %></td>
+    <td>  <span><i class="fa fa-paper-plane-o" aria-hidden="true"></i> <%= job.place %></td>
+    <td width="15%">
+     <span class="badge badge-info">
+      <span class="fa fa-rmb"></span><%= job.wage_lower_bound %> - <%= job.wage_upper_bound %> 元
+     </span>
+    </td>
+    <td width="15%">
+     <span><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(job.created_at) %> 前
+  </td>
+</tr>
+
   <% end %>
 </tbody>
 </table>
-
+</div>
 </div>
 <div class="text-center">
-  <%= will_paginate @jobs %>
+  <%= will_paginate @jobs,renderer: BootstrapPagination::Rails %>
 </div>
 
 </body>
