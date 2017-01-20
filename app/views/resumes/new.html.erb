@@ -1,10 +1,16 @@
-<h3>投交简历到 <%= @job.title %></h3>
+<div class="col-md-6 col-md-offset-3 job-show">
+	<div class="job-item-title col-md-12">
+  <div class="jobinfo">
+  <h3>投交简历到 <%= @job.title %></h3>
 
-<hr>
+   <hr>
 
-<%= simple_form_for [@job,@resume] do |f| %>
+  <%= simple_form_for [@job,@resume] do |f| %>
 
- <%= f.input :content %>
- <%= f.input :attachment %>
- <%= f.submit "送出" %>
-<% end %>
+   <%= f.input :content %>
+   <%= f.input :attachment %>
+   <%= f.submit "送出" %>
+  <% end %>
+  </div>
+</div>
+</div>

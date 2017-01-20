@@ -1,6 +1,6 @@
-<br>
+<div class="container searchresult">
 <%= render :partial => "jobs/search_bar" %>
-
+<br>
 <div class="search-result" style="padding-top:50px;">
   <table class="table table-borderd">
     <% @jobs.each do |job| %>
@@ -10,4 +10,5 @@
     <% end %>
   </table>
 
+</div>
 </div>

@@ -5,21 +5,22 @@
 </head>
 
 <body>
-<div class="container" id="include-job">
-  <div class="col-md-12">
- <div class="center hero-unit" style="background:#B3E5FC; padding-top:10px; padding-bottom:15px;">
+
+ <div class="center hero-unit" style="background: url('https://ww1.sinaimg.cn/large/006tNc79gy1fbwwmvrf6qj318g0hcmyg.jpg');background-repeat:no-repeat;">
+   <div class="container index-words">
 
     <h1>Welcome to the Victor Hunting</h1>
 
     <h2>
-      This is a dreaming stage!We are appreciated to fix up for you!
+      This is a dreaming stage.We are appreciated to fix up for you!
      <!-- 这是一个为企业和个人展现自我的舞台！我们能为您付出更多来建造！ -->
-
     </h2>
-    <br>
+    <br><br>
 
-   <%= link_to "Sign up now!", '#', class: "btn btn-large btn-primary" %>
-
+    <% if !current_user %>
+     <%= link_to "Join us now!", new_user_registration_path, class: "myButton" %>
+    <% end %>
+ </div>
  </div>
 
 <!-- 职位有关内容 -->
@@ -45,6 +46,8 @@
   <!-- Default panel contents -->
 
   <!-- Table -->
+<div class="container" id="include-job">
+    <div class="col-md-12">
 <ul class="nav nav-tabs" role="tablist" id="myTab">
   <li role="presentation" class="active"><a href="<% link_to(jobs_path) %>" role="tab" data-toggle="tab">Home</a></li>
   <li role="presentation"><%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %></li>
@@ -68,9 +71,9 @@
   <% @jobs.each_with_index do |job, index| %>
    <tr>
     <td><%= index +1%></td>
-    <td><span><i class="fa fa-paw" aria-hidden="true"></i> <%= link_to(job.title, job_path(job)) %></td>
-    <td>  <span><i class="fa fa-handshake-o" aria-hidden="true"></i> <%= job.company_name %></td>
-    <td>  <span><i class="fa fa-paper-plane-o" aria-hidden="true"></i> <%= job.place %></td>
+    <td><span><i class="fa fa-paw" aria-hidden="true"></i> <%= link_to(job.title, job_path(job)) %></span></td>
+    <td>  <span><i class="fa fa-handshake-o" aria-hidden="true"></i> <%= job.company_name %></span></td>
+    <td>  <span><i class="fa fa-paper-plane-o" aria-hidden="true"></i> <%= job.place %></span></td>
     <td width="15%">
      <span class="badge badge-info">
       <span class="fa fa-rmb"></span><%= job.wage_lower_bound %> - <%= job.wage_upper_bound %> 元
@@ -78,6 +81,7 @@
     </td>
     <td width="15%">
      <span><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(job.created_at) %> 前
+     </span>
   </td>
 </tr>
 
