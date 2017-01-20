@@ -6,6 +6,7 @@
 
 <body>
 <div class="container" id="include-job">
+  <div class="col-md-12">
  <div class="center hero-unit" style="background:#B3E5FC; padding-top:10px; padding-bottom:15px;">
 
     <h1>Welcome to the Victor Hunting</h1>
@@ -49,11 +50,7 @@
   <li role="presentation"><%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %></li>
   <li role="presentation"><%= link_to("按照发表下限排序", jobs_path(:order => "by_lower_bound")) %></li>
 </ul>
-<script>
-  $(function () {
-    $('#myTab a:last').tab('show')
-  })
-</script>
+
 
   <table class="table table-boldered table-striped custab">
     <thead>
@@ -87,6 +84,7 @@
   <% end %>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 <div class="text-center">
