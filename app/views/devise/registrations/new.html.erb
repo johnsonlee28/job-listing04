@@ -1,13 +1,17 @@
+<html>
+<head>
 <style>
-body {
-    background-image: url("<%= image_url 'login_background.jpg'%>");
-    background-repeat: no-repeat;
-    background-position: left top;
+ body{
+ background-image: url("<%= image_url 'login_background.jpg'%>");
+ background-repeat: no-repeat;
+ background-position: left top;
     background-attachment: fixed;
-}
-</style>
-<div class="container" style="height:auto" >
-  <div class="col-md-6" style="margin:auto;padding-top:200px;">
+ }
+ </style>
+</head>
+<body>
+<div class="container-fluid">
+<div class="col-md-4 col-md-offset-4 signup-page" >
 
 <h2>Sign up</h2>
 
@@ -26,3 +30,7 @@ body {
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
+</div>
+</body>
+</html>
