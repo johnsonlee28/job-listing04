@@ -1,3 +1,9 @@
+<style>
+ body{
+   background: url('https://ww1.sinaimg.cn/large/006y8lVagy1fby3ngn833j318g0togn3.jpg')
+}
+ </style>
+
 <div class="admin_jobs_index">
  <div class="pull-right">
    <%= link_to("添加职位", new_admin_job_path, :class => "btn btn-info") %>
@@ -12,7 +18,7 @@
   <thead>
     <tr>
       <td>#</td>
-      <td>招聘</td>
+      <td>招聘职位</td>
       <td>公司名称</td>
       <td>城市</td>
       <td>收到简历</td>
@@ -47,7 +53,7 @@
          <% end %>
        </td>
        <td>
-         <%= job.created_at %>
+         <%= job.created_at.strftime("%Y/%m/%d") %>
        </td>
 
     </tr>
@@ -55,4 +61,7 @@
   </table>
 </div>
 </div>
+</div>
+<div class="text-center">
+  <%= will_paginate @jobs,renderer: BootstrapPagination::Rails %>
 </div>

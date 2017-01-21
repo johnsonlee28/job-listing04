@@ -1,13 +1,18 @@
-<div class="col-md-6 col-md-offset-3 job-show">
+<style>
+ body{
+   background: url('https://ww1.sinaimg.cn/large/006y8lVagy1fby3ngn833j318g0togn3.jpg')
+}
+ </style>
+<div class="col-md-6 col-md-offset-2 job-show">
 	<div class="job-item-title col-md-12">
 		<h2 class="job-title" style="text-align:center"><%= @job.title %></h2>
 		<br>
-		<h4 class="job-company_name"><%= @job.company_name %></h4>
 	</div>
 	<div class="job-div-detail">
+    <h4 class="job-div-company_name"><span class="fa fa-ship"></span>  <%= @job.company_name %></h4>
 		<p style="font-size: 1.5em;">薪资：<span class="fa fa-rmb"></span><%= @job.wage_lower_bound %>~<%= @job.wage_upper_bound %></p>
-		<p><span style="font-size: 1.5em;"><i class="fa fa-paper-plane-o" aria-hidden="true" style="color: black;"></i><%= @job.place %></span></p>
-		<span style="font-size: 1.5em;"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(@job.created_at)%> ago</span>
+		<p><span style="font-size: 1.5em;"><i class="fa fa-paper-plane-o" aria-hidden="true" style="color: black;"></i> <%= @job.place %></span></p>
+		<span style="font-size: 1.5em;"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(@job.created_at)%> ago released</span>
 	</div>
 	<hr>
 	<div class="job-div-description">
@@ -15,6 +20,6 @@
 		<p><%= @job.description %></p>
 	</div>
 </div>
-<div class="col-md-6 col-md-offset-3 job-div-button">
+<div class="col-md-6 col-md-offset-2 job-div-button">
 	<%= link_to("投放简历", new_job_resume_path(@job), class: "btn btn-primary btn-block") %>
 </div>

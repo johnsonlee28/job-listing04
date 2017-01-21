@@ -6,17 +6,16 @@
 #welcomeindex {
   display:block;
   clear:both;
+
 }
 
 #company {
-  background-color: #FFFFFF;
-
+  background-color: #263238;
+  margin:0; padding:0;
 }
 
 .jumbotron {
-  background: url('https://ww1.sinaimg.cn/large/006tNc79gy1fbx2nv83vlj318g0rs0uz.jpg') scroll;
-  margin-top: 30px;
-  margin-down: 0px;
+  background: url('https://ww1.sinaimg.cn/large/006y8lVagy1fby2wk9awkj318g0rsgnc.jpg');
   background-size: cover;
   min-width: 250px;
   height: 670px;
@@ -24,20 +23,21 @@
   left: 0;
   right: 0;
   border-radius: 0;
+  display: block;
 
 
 }
-.title {
-  font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
-  text-align: center;
-  margin-top: 100px;
-  margin-bottom: 0px
-  ;
-}
+// .title {
+//   font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+//   text-align: center;
+//   margin-top: 15px;
+//   margin-bottom: 0px;
+// }
 
 .slogan {
-  margin-top: 30px;
-  margin-bottom:70px;
+  font-family: "Arial", "Microsoft Yahei", 微软雅黑;
+  margin-top: 15px;
+  margin-bottom:0px;
   text-align: center;
   color: white;
   top: 12px;
@@ -45,17 +45,21 @@
 
 .lead {
   margin-bottom: 0px;
+  margin-top: 200px;
   text-align: center;
   color: white;
 }
 
 .caption {
-  margin: 30px;
+  margin: 0px;
   text-align: center;
-  top: 20px;
+  top: 0px;
 }
 
 .thumbnail {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     border: 0 none;
     box-shadow: none;
     margin-top: 60px;
