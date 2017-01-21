@@ -14,17 +14,20 @@
   margin:0; padding:0;
 }
 
+#people {
+  background-color: #263238;
+  margin:0; padding:0;
+}
 .jumbotron {
   background: url('https://ww1.sinaimg.cn/large/006y8lVagy1fby2wk9awkj318g0rsgnc.jpg');
   background-size: cover;
   min-width: 250px;
-  height: 670px;
+  height: 800px;
   width: 100%;
   left: 0;
   right: 0;
   border-radius: 0;
   display: block;
-
 
 }
 // .title {
@@ -56,6 +59,13 @@
   top: 0px;
 }
 
+.words {
+  margin-top: 50px;
+  text-align: center;
+  color: white;
+
+}
+
 .thumbnail {
     display: block;
     margin-left: auto;
@@ -63,4 +73,8 @@
     border: 0 none;
     box-shadow: none;
     margin-top: 60px;
+}
+
+.img-thumbnail {
+   max-width:50px;_width:expression(this.width > 300 ? "300px" : this.width);
 }
