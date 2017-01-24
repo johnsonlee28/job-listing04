@@ -16,4 +16,5 @@
 //= require bootstrap/alert
 //= require bootstrap/dropdown
 //= require local_time
+//= require bootstrap-sprockets
 //= require_tree .

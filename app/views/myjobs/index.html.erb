@@ -1,7 +1,23 @@
+<style>
+body {
+    background-image: url("https://ww1.sinaimg.cn/large/006y8lVagy1fby3ngn833j318g0togn3.jpg");
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-attachment: fixed;
+
+}
+</style>
+
+<div class="col-md-6 col-md-offset-3 job-show">
+  <div class="col-md-12">
+
 <% @jobs.each do |job| %>
-<tr>
-  <td><%= job.title %></td>
-  <td><%= job.wage_lower_bound %>~<%= job.wage_upper_bound %></td>
-  <td><%= job.company_place %></td>
-</tr>
+ <tr>
+   <td><%= job.title %></td>
+   <td><%= job.wage_lower_bound %>~<%= job.wage_upper_bound %></td>
+   <td><%= job.company_name %></td>
+ </tr>
 <% end %>
+
+</div>
+</div>

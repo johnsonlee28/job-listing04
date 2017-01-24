@@ -28,6 +28,7 @@ div {
 
 /* main */
 
+
 .hero-unit {
 
 }
@@ -186,12 +187,9 @@ footer {
 
 /* jobinfo */
 .job-show {
-
-	padding-left: 0px;
-	padding-right: 0px;
-	margin-top: 2em;
-  padding-top: 60px;
-  padding-bottom: 100px;
+	margin-top: 100px;
+  height:560px;
+  box-shadow: 20px 20px 80px rgb(241,202,177);
 }
 
 
@@ -211,7 +209,8 @@ footer {
 
 .signup-page, .login-page, .forgot-page, .changepassword-page{
   margin-top: 100px;
-  padding-bottom: 60px;
+  padding-bottom: 0px;
+  height:560px;
 
 }
 
