@@ -23,4 +23,7 @@ class Job < ApplicationRecord
     is_present
   end
 
+  has_many :job_relationships
+  has_many :members, through: :job_relationships, source: :user
+
 end
