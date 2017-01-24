@@ -189,9 +189,14 @@ footer {
 .job-show {
 	margin-top: 100px;
   height:560px;
-  box-shadow: 20px 20px 80px rgb(241,202,177);
+  box-shadow: 10px 10px 50px 20px rgb(241,202,177)
+
+
 }
 
+.job-title{
+  margin-bottom: 20px;
+}
 
 
 .jobshow {
@@ -203,6 +208,15 @@ footer {
 }
 .jobinfo{
     padding-top: 60px;
+}
+
+.job-div-description {
+  padding:0
+}
+
+.job-div-button {
+  margin-bottom: 0;
+  margin-top:180px;
 }
 
 /* sign-login */
