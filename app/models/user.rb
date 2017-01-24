@@ -12,4 +12,12 @@ class User < ApplicationRecord
   has_many :jobs
   has_many :job_relationships
   has_many :participated_jobs, :through => :job_relationships, :source => :job
+
+  def is_member_of?(job)
+    participated_jobs.include?(job)
+  end
+
+  def join!(job)
+    participated_jobs << job
+  end
 end

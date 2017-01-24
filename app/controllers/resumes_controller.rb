@@ -1,6 +1,6 @@
 class ResumesController < ApplicationController
   before_filter :authenticate_user!
-  
+
 
   def new
     @job = Job.find(params[:job_id])
@@ -14,6 +14,7 @@ class ResumesController < ApplicationController
     @resume.user = current_user
 
     if @resume.save
+      current_user.join!(@job)
       flash[:notice] = "成功提交简历"
       redirect_to job_path(@job)
     else
