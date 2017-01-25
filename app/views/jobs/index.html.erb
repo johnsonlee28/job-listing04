@@ -26,28 +26,12 @@
 
 <!-- 职位有关内容 -->
 <br>
-<!-- <div class="dropdown clearfix pull-right">
-   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-     排序
-     <span class="caret"></span>
-   </button>
-   <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
-     <li>
-       <%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound")) %>
-     </li>
-     <li>
-       <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %>
-     </li>
-     <li>
-       <%= link_to("按照发表时间排序", jobs_path) %>
-     </li>
-   </ul>
-</div> -->
-<br><br>
+
+<br>
   <!-- Default panel contents -->
 
   <!-- Table -->
-<div class="container" id="include-job">
+<!-- <div class="container" id="include-job">
     <div class="col-md-12">
 <ul class="nav nav-tabs" role="tablist" id="myTab">
   <li role="presentation" class="active"><a href="<% link_to(jobs_path) %>" role="tab" data-toggle="tab">Home</a></li>
@@ -91,6 +75,53 @@
 </table>
 </div>
 </div>
+</div>
+<div class="text-center">
+  <%= will_paginate @jobs,renderer: BootstrapPagination::Rails %>
+</div> -->
+
+<!-- 换展示样式 -->
+
+
+<div class="container-fluid">
+  <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+    <div class="col-md-12">
+    <% @jobs.each do |job| %>
+       <div class="row">
+        <div class="col-md-12">
+          <span style="font-size:1.5em"><i class="fa fa-paw" aria-hidden="true"></i><%= job.title %></span>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-6">
+          <span style="font-size:1em;"><i class="fa fa-handshake-o"></i> 企业名称：<%= job.company_name %></span>
+        </div>
+        <div class="col-md-4 col-md-offset-1">
+          <span style="font-size:1em;">招聘人数：<%= job.recruitment_number %></span>
+       </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <span class="badge badge-info">
+             <span style="font-size:1em;"class="fa fa-rmb"></span><%= job.wage_lower_bound %> - <%= job.wage_upper_bound %> 元
+          </span>
+        </div>
+        <div class="col-md-4 col-md-offset-1">
+          <span style="font-size:1em;">竞聘人数：<%= job.resumes.count %></span>
+        </div>
+        <div class="col-md-6">
+          <span style="font-size:1em;"><i class="fa fa-paper-plane-o" aria-hidden="true" style="color: black;"></i> 城市：<%= job.place %></span>
+        </div>
+        <div class="col-md-4 col-md-offset-1">
+          <span style="font-size:1em;">发布时间：<%= time_ago_in_words(job.created_at) %>前</span>
+        </div>
+      </div>
+      <hr>
+    <% end %>
+    </div>
+  </div>
 </div>
 <div class="text-center">
   <%= will_paginate @jobs,renderer: BootstrapPagination::Rails %>

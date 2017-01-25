@@ -24,7 +24,7 @@
              <% if current_user.admin? %>
                <li><%= link_to("管理员", admin_jobs_path) %></li>
              <% end %>
-               <li><%= link_to("My Jobs", myjobs_path) %></li>
+               <li><%= link_to("已申请的工作", myjobs_path) %></li>
                <li><%= link_to('<span class="glyphicon glyphicon-log-out"></span> 登出'.html_safe,destroy_user_session_path, method: :delete) %></li>
            </ul>
          </li>

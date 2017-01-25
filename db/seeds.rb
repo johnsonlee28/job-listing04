@@ -24,7 +24,8 @@ job_info = [
   '招聘python工程师',
   '招聘高级JAVA研发工程师',
   '招聘高级数据挖掘工程师',
-  '招聘高级客服经理'
+  '招聘高级客服经理',
+  '招聘市场总监'
 ]
 
 job_city = [
@@ -33,7 +34,9 @@ job_city = [
   '天津',
   '北京',
   '珠海',
-  '上海'
+  '上海',
+  '哈尔滨'
+  '辽宁'
 ]
 
 job_company = [
@@ -41,19 +44,21 @@ job_company = [
   '人人网',
   '汇添宝',
   '广晟集团',
-  '威莱集团',
-  '立白集团',
+  '威威集团',
+  '李白集团',
   '巴塔木广告有限公司',
   '酷派家居有限公司',
   '利天',
   '登峰极集团'
+  '盛天庄集团有限公司',
+  '斯柏菲'
 ]
 
 create_jobs = for i in 1..10 do
-                Job.create!([title: job_info[rand(job_info.length)], description: "这是一个公开的工作", place: job_city[rand(job_city.length)],company_name: job_company[rand(job_company.length)], wage_upper_bound: rand(40..79) * 1000, wage_lower_bound: rand(20..39) * 1000, is_hidden: 'false'])
+                Job.create!([title: job_info[rand(job_info.length)], description: "这是一个公开的工作", place: job_city[rand(job_city.length)],company_name: job_company[rand(job_company.length)], wage_upper_bound: rand(40..79) * 1000, wage_lower_bound: rand(20..39) * 1000,recruitment_number: rand(1..10)*1, is_hidden: 'false'])
               end
 for i in 1..10 do
-  Job.create!([title: job_info[rand(job_info.length)], description: "这是一个隐藏的工作", place: job_city[rand(job_city.length)],company_name: job_company[rand(job_company.length)], wage_upper_bound: rand(40..79) * 1000, wage_lower_bound: rand(20..39) * 1000, is_hidden: 'true'])
+  Job.create!([title: job_info[rand(job_info.length)], description: "这是一个隐藏的工作", place: job_city[rand(job_city.length)],company_name: job_company[rand(job_company.length)], wage_upper_bound: rand(40..79) * 1000, wage_lower_bound: rand(20..39) * 1000,recruitment_number: rand(1..10)*1, is_hidden: 'true'])
 end
 
 puts '10 Public jobs created.'
