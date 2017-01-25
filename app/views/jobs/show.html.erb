@@ -52,7 +52,14 @@
 		<h3>职位描述</h3>
 		<p><%= @job.description %></p>
 	</div>
-  <div class="col-md-8 col-md-offset-2 job-div-button">
-  	<%= link_to("投放简历", new_job_resume_path(@job), class: "btn btn-primary btn-block") %>
-  </div>
+  <% if  current_user && current_user.participated_jobs(@job) %>
+    <div class="col-md-8 col-md-offset-2 job-div-button">
+  	  <%= link_to("已投放简历",'#', class: "btn btn-default btn-block")  %>
+    </div>
+  <% else %>
+   <div class="col-md-8 col-md-offset-2 job-div-button">
+     <%= link_to("投放简历", new_job_resume_path(@job), class: "btn btn-primary btn-block") %>
+   </div>
+  <% end %>
+
 </div>
