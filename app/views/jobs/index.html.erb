@@ -86,12 +86,24 @@
 <div class="container-fluid">
   <div class="col-md-12 col-md-offset-1 col-lg-8 col-lg-offset-2">
     <div class="col-md-12">
+      <div class="dropdown pull-right">
+         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          筛选
+            <span class="caret"></span>
+         </button>
+       <ul class="dropdown-menu" aria-labelledby="dropdownMenu4">
+        <li><%= link_to("更新时间排序",jobs_path(:order => "created_at"))%></li>
+        <li><%= link_to("薪资上限排序",jobs_path(:order => "by_upper_bound"))%></li>
+        <li><%= link_to("薪资下限排序",jobs_path(:order => "by_lower_bound"))%></li>
+       </ul>
+     </div>
       <ul class="nav nav-tabs" role="tablist" id="myTab">
         <li role="presentation" class="active"><a href="<% link_to(jobs_path) %>" role="tab" data-toggle="tab">Home</a></li>
-        <li role="presentation"><%= link_to("更新时间排序", jobs_path(:order => "created_at")) %></li>
+        <!-- <li role="presentation"><%= link_to("更新时间排序", jobs_path(:order => "created_at")) %></li>
         <li role="presentation"><%= link_to("薪资上限排序", jobs_path(:order => "by_upper_bound")) %></li>
-        <li role="presentation"><%= link_to("薪资下限排序", jobs_path(:order => "by_lower_bound")) %></li>
+        <li role="presentation"><%= link_to("薪资下限排序", jobs_path(:order => "by_lower_bound")) %></li> -->
       </ul>
+
     <% @jobs.each do |job| %>
        <div class="row">
         <div class="col-md-12">
@@ -115,13 +127,13 @@
           </span>
         </div>
         <div class="col-md-3">
-          <span style="font-size:1em;"><i class="fa fa-thumbs-o-up"></i>招聘人数：<%= job.recruitment_number %></span>
+          <span style="font-size:1em;"><i class="fa fa-thumbs-o-up"></i> 招聘人数：<%= job.recruitment_number %></span>
         </div>
         <div class="col-md-3">
-          <span style="font-size:1em;"><i class="fa fa-thumbs-up"></i>竞聘人数：<%= job.resumes.count %></span>
+          <span style="font-size:1em;"><i class="fa fa-thumbs-up"></i> 竞聘人数：<%= job.resumes.count %></span>
         </div>
         <div class="col-md-3">
-          <span style="font-size:1em;"><i class="fa fa-clock-o" aria-hidden="true"></i>发布时间：<%= time_ago_in_words(job.created_at) %>前</span>
+          <span style="font-size:1em;"><i class="fa fa-clock-o" aria-hidden="true"></i> 发布时间：<%= time_ago_in_words(job.created_at) %>前</span>
         </div>
       </div>
       <hr>

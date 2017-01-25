@@ -38,6 +38,11 @@
 
 <div class="col-md-6 col-md-offset-3 job-show" style="border-top-right-radius:60px;border-top-left-radius:60px; border-bottom-right-radius:60px;
   border-bottom-left-radius:60px;">
+  <div class="row" style="margin-top:8px;margin-left:60px;">
+    <div class="col-md-12 col-md-offset-10">
+        <%= link_to('<span class="glyphicon glyphicon-remove-sign"></span> Back'.html_safe,jobs_path ) %>
+    </div>
+  </div>
 	<div class="job-item-title col-md-12" >
 		<h2 class="job-title" style="text-align:center"><%= @job.title %></h2>
 	</div>
@@ -47,14 +52,14 @@
 		<p><span style="font-size: 1.5em;"><i class="fa fa-paper-plane-o" aria-hidden="true" style="color: black;"></i><%= @job.place %></span></p>
 		<span style="font-size: 1.5em;"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(@job.created_at)%> ago released</span>
 	</div>
-	<hr sytle="border:2px">
+	<hr>
 	<div class="job-div-description">
 		<h3>职位描述</h3>
 		<p><%= @job.description %></p>
 	</div>
-  <% if  current_user && current_user.participated_jobs(@job) %>
+  <% if  current_user && current_user.is_member_of?(@job) %>
     <div class="col-md-8 col-md-offset-2 job-div-button">
-  	  <%= link_to("已投放简历",'#', class: "btn btn-default btn-block")  %>
+  	  <%= link_to("已投放简历",'#', class: "btn btn-default btn-block disabled")  %>
     </div>
   <% else %>
    <div class="col-md-8 col-md-offset-2 job-div-button">
