@@ -8,15 +8,21 @@ body {
 }
 </style>
 
-<div class="col-md-6 col-md-offset-3 job-show">
+<div class="col-md-6 col-md-offset-3 job-show" style="  border-top-right-radius:60px;border-top-left-radius:60px;  border-bottom-right-radius:60px;
+  border-bottom-left-radius:60px;">
   <div class="col-md-12">
 
 <% @jobs.each do |job| %>
- <tr>
-   <td><%= job.title %></td>
-   <td><%= job.wage_lower_bound %>~<%= job.wage_upper_bound %></td>
-   <td><%= job.company_name %></td>
- </tr>
+ <div class="job-item-title col-md-12" style="border:1px solid;border-color:transparent">
+   <h2 class="job-title" style="text-align:center"><%= link_to(job.title, job_path(job))%></h2>
+ </div>
+ <div class="job-div-detail">
+    <h4 class="job-div-company_name" style="text-align:center"><span class="fa fa-ship"></span>  <%= job.company_name %></h4>
+ </div>
+  <p style="font-size: 1.5em;">薪资：<span class="fa fa-rmb"></span><%= job.wage_lower_bound %>~<%= job.wage_upper_bound %></p>
+ <p style="font-size:.0.56em;text-align:right"><span>竞聘人数：</span><%= job.resumes.count %></p>
+
+ <hr>
 <% end %>
 
 </div>
