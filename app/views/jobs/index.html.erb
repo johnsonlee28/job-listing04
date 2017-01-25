@@ -84,38 +84,38 @@
 
 
 <div class="container-fluid">
-  <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+  <div class="col-md-12 col-md-offset-1 col-lg-8 col-lg-offset-2">
     <div class="col-md-12">
     <% @jobs.each do |job| %>
        <div class="row">
         <div class="col-md-12">
-          <span style="font-size:1.5em"><i class="fa fa-paw" aria-hidden="true"></i><%= job.title %></span>
+          <span style="font-size:1.3em"><i class="fa fa-paw" aria-hidden="true"></i> <%= link_to(job.title, job_path(job)) %></span>
         </div>
       </div>
-      <br>
-      <div class="row">
+
+      <div class="row" style="margin-top:10px;">
         <div class="col-md-6">
           <span style="font-size:1em;"><i class="fa fa-handshake-o"></i> 企业名称：<%= job.company_name %></span>
         </div>
-        <div class="col-md-4 col-md-offset-1">
-          <span style="font-size:1em;">招聘人数：<%= job.recruitment_number %></span>
+        <div class="col-md-6">
+          <span style="font-size:1em;"><i class="fa fa-paper-plane-o" aria-hidden="true" style="color: black;"></i> 城市：<%= job.place %></span>
        </div>
       </div>
 
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-3">
           <span class="badge badge-info">
-             <span style="font-size:1em;"class="fa fa-rmb"></span><%= job.wage_lower_bound %> - <%= job.wage_upper_bound %> 元
+             <span style="font-size:1em;"class="fa fa-rmb"></span>薪资：<%= job.wage_lower_bound %> - <%= job.wage_upper_bound %> 元
           </span>
         </div>
-        <div class="col-md-4 col-md-offset-1">
-          <span style="font-size:1em;">竞聘人数：<%= job.resumes.count %></span>
+        <div class="col-md-3">
+          <span style="font-size:1em;"><i class="fa fa-thumbs-o-up"></i>招聘人数：<%= job.recruitment_number %></span>
         </div>
-        <div class="col-md-6">
-          <span style="font-size:1em;"><i class="fa fa-paper-plane-o" aria-hidden="true" style="color: black;"></i> 城市：<%= job.place %></span>
+        <div class="col-md-3">
+          <span style="font-size:1em;"><i class="fa fa-thumbs-up"></i>竞聘人数：<%= job.resumes.count %></span>
         </div>
-        <div class="col-md-4 col-md-offset-1">
-          <span style="font-size:1em;">发布时间：<%= time_ago_in_words(job.created_at) %>前</span>
+        <div class="col-md-3">
+          <span style="font-size:1em;"><i class="fa fa-clock-o" aria-hidden="true"></i>发布时间：<%= time_ago_in_words(job.created_at) %>前</span>
         </div>
       </div>
       <hr>
