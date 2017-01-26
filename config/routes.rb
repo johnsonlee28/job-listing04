@@ -21,8 +21,9 @@ Rails.application.routes.draw do
     end
   end
   resources :myjobs do
-    
+
   end
+
 
   resources :welcome do
 

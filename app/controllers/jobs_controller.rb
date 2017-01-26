@@ -65,6 +65,7 @@ class JobsController < ApplicationController
   end
 
 
+
   protected
 
   def validate_search_key

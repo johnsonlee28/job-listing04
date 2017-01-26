@@ -112,19 +112,22 @@
       </ul>
     <% @jobs.each do |job| %>
        <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-6">
           <span style="font-size:1.3em"><i class="fa fa-paw" aria-hidden="true"></i> <%= link_to(job.title, job_path(job)) %></span>
         </div>
       </div>
 
       <div class="row" style="margin-top:10px;">
-        <div class="col-md-6">
+        <div class="col-md-3">
           <span style="font-size:1em;"><i class="fa fa-handshake-o"></i> 企业名称：<%= job.company_name %></span>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-3">
           <span class="badge badge-info">
             薪资： <span style="font-size:1em;"class="fa fa-rmb"></span><%= job.wage_lower_bound %> - <%= job.wage_upper_bound %> 元
           </span>
+       </div>
+       <div class="col-md-3">
+         <span style="font-size:1em;"><i class="fa fa-envelope-open-o"></i> 邮箱地址：<%= job.contact_email %></span>
        </div>
       </div>
 

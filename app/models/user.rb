@@ -20,4 +20,7 @@ class User < ApplicationRecord
   def join!(job)
     participated_jobs << job
   end
+
+
+
 end

@@ -54,8 +54,15 @@ job_company = [
   '斯柏菲',
 ]
 
+job_email = [
+  'johnsonlee@126.com',
+  'example@163.com',
+  'xxoxx@gmail.com',
+  'coco@163.com'
+]
+
 create_jobs = for i in 1..10 do
-                Job.create!([title: job_info[rand(job_info.length)], description: "这是一个公开的工作", place: job_city[rand(job_city.length)],company_name: job_company[rand(job_company.length)], wage_upper_bound: rand(40..79) * 1000, wage_lower_bound: rand(20..39) * 1000,recruitment_number: rand(1..10)*1, is_hidden: 'false'])
+                Job.create!([title: job_info[rand(job_info.length)], description: "这是一个公开的工作", place: job_city[rand(job_city.length)],company_name: job_company[rand(job_company.length)], wage_upper_bound: rand(40..79) * 1000, wage_lower_bound: rand(20..39) * 1000,recruitment_number: rand(1..10)*1,is_hidden: 'false'])
               end
 for i in 1..10 do
   Job.create!([title: job_info[rand(job_info.length)], description: "这是一个隐藏的工作", place: job_city[rand(job_city.length)],company_name: job_company[rand(job_company.length)], wage_upper_bound: rand(40..79) * 1000, wage_lower_bound: rand(20..39) * 1000,recruitment_number: rand(1..10)*1, is_hidden: 'true'])
