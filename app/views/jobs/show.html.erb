@@ -36,15 +36,15 @@
  </style>
 
 
-<div class="col-md-6 col-md-offset-3 job-show" style="border-top-right-radius:60px;border-top-left-radius:60px; border-bottom-right-radius:60px;
-  border-bottom-left-radius:60px;">
+<div class="col-md-6 col-md-offset-3 job-show" style="border-top-right-radius:30px;border-top-left-radius:30px; border-bottom-right-radius:30px;
+  border-bottom-left-radius:30px;">
   <div class="row" style="margin-top:8px;margin-left:60px;">
     <div class="col-md-12 col-md-offset-10">
         <%= link_to('<span class="glyphicon glyphicon-remove-sign"></span> Back'.html_safe,jobs_path ) %>
     </div>
   </div>
 	<div class="job-item-title col-md-12" >
-		<h2 class="job-title" style="text-align:center"><%= @job.title %></h2>
+		<h3 class="job-title" style="text-align:center"><%= @job.title %></h3>
 	</div>
 	<div class="job-div-detail">
     <h4 class="job-div-company_name" style="text-align:center"><span class="fa fa-ship"></span>  <%= @job.company_name %></h4>

@@ -111,6 +111,17 @@
          </li>
       </ul>
     <% @jobs.each do |job| %>
+     <div class="row">
+     <div class="col-md-12 col-md-offset-10">
+      <% if current_user && current_user.is_favorite_of?(job) %>
+        <button type="button" class="btn btn-default btn-xs"><%= link_to('<span class="glyphicon glyphicon-star-empty"></span>取消收藏'.html_safe, favorite_job_path(job, type: "unfavorite"), method: :put) %></button>
+      <% else %>
+        <button type="button" class="btn btn-default btn-xs"><%= link_to('<span class="glyphicon glyphicon-star"></span>添加收藏'.html_safe, favorite_job_path(job, type: "favorite"), method: :put) %></button>
+      <% end %>
+    </div>
+  </div>
+
+
        <div class="row">
         <div class="col-md-6">
           <span style="font-size:1.3em"><i class="fa fa-paw" aria-hidden="true"></i> <%= link_to(job.title, job_path(job)) %></span>

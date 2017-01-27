@@ -23,7 +23,13 @@ Rails.application.routes.draw do
   resources :myjobs do
 
   end
+  resources :jobs do
+    put :favorite, on: :member
 
+  end
+  resources :favorite do
+    
+  end
 
   resources :welcome do
 

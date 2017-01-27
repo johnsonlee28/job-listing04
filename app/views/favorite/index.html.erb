@@ -9,7 +9,7 @@ body {
 </style>
 
 <div class="col-md-6 col-md-offset-3 job-show" style="  border-top-right-radius:30px;border-top-left-radius:30px;  border-bottom-right-radius:30px;
-  border-bottom-left-radius:30px;">
+  border-bottom-left-radius:60px;">
   <div class="col-md-12">
     <div class="row" style="margin-top:8px;margin-left:60px;">
       <div class="col-md-12 col-md-offset-10">
@@ -19,7 +19,7 @@ body {
 
 <% @jobs.each do |job| %>
  <div class="job-item-title col-md-12" style="border:1px solid;border-color:transparent">
-   <h2 class="job-title" style="text-align:center"><%= link_to(job.title, job_path(job))%></h2>
+   <h3 class="job-title" style="text-align:center"><%= link_to(job.title, job_path(job))%></h2>
  </div>
  <div class="job-div-detail">
     <h4 class="job-div-company_name" style="text-align:center"><span class="fa fa-ship"></span>  <%= job.company_name %></h4>

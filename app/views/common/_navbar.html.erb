@@ -24,6 +24,7 @@
              <% if current_user.admin? %>
                <li><%= link_to('<span class="glyphicon glyphicon-edit"></span> 管理员'.html_safe, admin_jobs_path) %></li>
              <% end %>
+               <li><%= link_to('<span class="glyphicon glyphicon-floppy-saved"></span> 已收藏的职位'.html_safe, favorite_index_path) %></li>
                <li><%= link_to('<span class="glyphicon glyphicon-check"></span> 已申请的工作'.html_safe, myjobs_path) %></li>
                <li><%= link_to('<span class="glyphicon glyphicon-log-out"></span> 登出'.html_safe,destroy_user_session_path, method: :delete) %></li>
            </ul>

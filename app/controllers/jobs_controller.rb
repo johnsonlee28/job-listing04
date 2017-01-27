@@ -64,6 +64,22 @@ class JobsController < ApplicationController
     end
   end
 
+  def favorite
+    @job = Job.find(params[:id])
+    type = params[:type]
+    if type == "favorite"
+      current_user.favorite_jobs << @job
+      redirect_to :back
+
+    elsif type == "unfavorite"
+      current_user.favorite_jobs.delete(@job)
+      redirect_to :back
+
+    else
+      redirect_to :back
+    end
+  end
+
 
 
   protected

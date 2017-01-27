@@ -12,6 +12,8 @@ class User < ApplicationRecord
   has_many :jobs
   has_many :job_relationships
   has_many :participated_jobs, :through => :job_relationships, :source => :job
+  has_many :favorites
+  has_many :favorite_jobs, :through => :favorites, :source => :job
 
   def is_member_of?(job)
     participated_jobs.include?(job)
@@ -21,6 +23,9 @@ class User < ApplicationRecord
     participated_jobs << job
   end
 
+  def is_favorite_of?(job)
+    favorite_jobs.include?(job)
+  end
 
 
 end
